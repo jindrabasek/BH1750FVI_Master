@@ -52,7 +52,7 @@ int16_t BH1750FVI::GetLightIntensity(void) {
     Intensity_value |= Wire.read();
     int8_t err = Wire.endTransmission();
     if (err) {
-        return -1;
+        return -err;
     }
     Intensity_value = Intensity_value / 1.2;
     return Intensity_value;
